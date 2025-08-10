@@ -1,7 +1,7 @@
-<<<<<<< HEAD
+
 # f1-predictor-bi
 End to end F1 race outcome prediction and BI platform with Ergast ingestion, dbt feature marts, XGBoost models, and Power BI/Tableau dashboards.
-=======
+
 # F1 Race Outcome Prediction + BI Platform
 End‑to‑end project: Ergast ingestion → Postgres → dbt feature marts → XGBoost models → Power BI/Tableau dashboards. Built for a Business Intelligence Engineer portfolio.
 
@@ -23,6 +23,4 @@ End‑to‑end project: Ergast ingestion → Postgres → dbt feature marts → 
 - Dimensional marts, realistic KPIs, calibration metrics, ops page.
 - Clean repo layout, easy to extend (safety car model, pit strategy simulator).
 
-## Credits
-- Data: Ergast Developer API
->>>>>>> 4389a37 (Updated Fixes)
+
