@@ -1,0 +1,11 @@
+name: f1_bi
+version: 1.0.0
+profile: f1_bi
+model-paths: ["models"]
+models:
+  f1_bi:
+    +schema: marts
+    staging:
+      +schema: staging
+    marts:
+      +schema: marts

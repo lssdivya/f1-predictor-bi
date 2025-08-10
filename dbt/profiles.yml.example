@@ -1,0 +1,12 @@
+f1_bi:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: localhost
+      user: ${POSTGRES_USER}
+      password: ${POSTGRES_PASSWORD}
+      port: ${POSTGRES_PORT}
+      dbname: ${POSTGRES_DB}
+      schema: marts
+      threads: 4

@@ -1,0 +1,27 @@
+version: "3.8"
+services:
+  postgres:
+    image: postgres:15
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    ports:
+      - "${POSTGRES_PORT}:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  airflow:
+    image: apache/airflow:2.9.3
+    depends_on: [postgres]
+    environment:
+      - AIRFLOW__CORE__EXECUTOR=SequentialExecutor
+      - AIRFLOW__CORE__LOAD_EXAMPLES=False
+    volumes:
+      - ./airflow_dags:/opt/airflow/dags
+      - ./.env:/opt/airflow/.env
+    ports:
+      - "8080:8080"
+    command: bash -lc "airflow db init && airflow users create -u admin -p admin -r Admin -e admin@local -f Admin -l User && airflow webserver & airflow scheduler"
+volumes:
+  pgdata:
